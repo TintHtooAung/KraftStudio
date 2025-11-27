@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Kraft Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">KRAFT STUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Projects Hero -->
+    <section class="projects-hero">
+        <div class="container">
+            <h1 class="page-title">Our Work</h1>
+            <p class="page-subtitle">Explore our portfolio of architectural excellence</p>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section class="category-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Projects</button>
+                <button class="filter-btn" data-category="residential">Residential</button>
+                <button class="filter-btn" data-category="hotels">Hotels & Schools</button>
+                <button class="filter-btn" data-category="commercial">Commercial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section class="projects-gallery">
+        <div class="container">
+            <div class="gallery-grid">
+                <!-- Residential Projects -->
+                <article class="project-item" data-category="residential">
+                    <a href="project-detail.html?id=1" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop" alt="Modern Villa" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Residential</span>
+                            <h3 class="project-title">Modern Villa</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="residential">
+                    <a href="project-detail.html?id=2" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop" alt="Minimalist Apartment" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Residential</span>
+                            <h3 class="project-title">Minimalist Apartment</h3>
+                            <p class="project-location">Mandalay, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="residential">
+                    <a href="project-detail.html?id=3" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop" alt="Contemporary House" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Residential</span>
+                            <h3 class="project-title">Contemporary House</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Hotels & Schools -->
+                <article class="project-item" data-category="hotels">
+                    <a href="project-detail.html?id=4" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Boutique Hotel" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Hotels & Schools</span>
+                            <h3 class="project-title">Boutique Hotel</h3>
+                            <p class="project-location">Bagan, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="hotels">
+                    <a href="project-detail.html?id=5" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&h=600&fit=crop" alt="International School" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Hotels & Schools</span>
+                            <h3 class="project-title">International School</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="hotels">
+                    <a href="project-detail.html?id=6" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&h=600&fit=crop" alt="Resort & Spa" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Hotels & Schools</span>
+                            <h3 class="project-title">Resort & Spa</h3>
+                            <p class="project-location">Ngapali, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Commercial Projects -->
+                <article class="project-item" data-category="commercial">
+                    <a href="project-detail.html?id=7" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop" alt="Corporate Office" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Commercial</span>
+                            <h3 class="project-title">Corporate Office</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="commercial">
+                    <a href="project-detail.html?id=8" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop" alt="Tech Startup Hub" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Commercial</span>
+                            <h3 class="project-title">Tech Startup Hub</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="commercial">
+                    <a href="project-detail.html?id=9" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop" alt="Retail Complex" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Commercial</span>
+                            <h3 class="project-title">Retail Complex</h3>
+                            <p class="project-location">Mandalay, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="residential">
+                    <a href="project-detail.html?id=10" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop" alt="Luxury Penthouse" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Residential</span>
+                            <h3 class="project-title">Luxury Penthouse</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="commercial">
+                    <a href="project-detail.html?id=11" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop" alt="Restaurant & Cafe" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Commercial</span>
+                            <h3 class="project-title">Restaurant & Cafe</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="project-item" data-category="hotels">
+                    <a href="project-detail.html?id=12" class="project-link">
+                        <div class="project-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1519167758481-83f29da8c2b6?w=800&h=600&fit=crop" alt="University Campus" loading="lazy">
+                            <div class="project-overlay">
+                                <span class="view-project">View Project →</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Hotels & Schools</span>
+                            <h3 class="project-title">University Campus</h3>
+                            <p class="project-location">Yangon, Myanmar</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Kraft Studio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="projects.js"></script>
+</body>
+</html>

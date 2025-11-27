@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraft Studio - Architecture & Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">KRAFT STUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="introduction">
+        <div class="container">
+            <div class="intro-content">
+                <h2 class="intro-greeting">HELLO! မင်္ဂလာပါ</h2>
+                <div class="intro-text">
+                    <p class="intro-burmese">Kraft Studio မှ ကြိုဆိုပါတယ် ဒီဇိုင်းများကို ဝင်ကြည့်ဖို့ ဖိတ်ခေါ်ပါတယ်။ သိချင်တာရှိရင်လဲ contact မှာ ဆက်သွယ်နိုင်ပါတယ်ရှင်။</p>
+                    <p class="intro-english">Welcome to KRAFT STUDIO! We're thrilled to have you here. Feel free to wander through our creative space, where dreams take shape and ideas find their architectural home. Let's embark on a journey to transform your visions into extraordinary spaces together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Selected Works</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="1">
+                    <div class="project-image">
+                        <div class="project-canvas" data-canvas="1"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Modern Villa</h3>
+                        <p>Residential / 2024</p>
+                    </div>
+                </div>
+                <div class="project-card" data-project="2">
+                    <div class="project-image">
+                        <div class="project-canvas" data-canvas="2"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Urban Office</h3>
+                        <p>Commercial / 2024</p>
+                    </div>
+                </div>
+                <div class="project-card" data-project="3">
+                    <div class="project-image">
+                        <div class="project-canvas" data-canvas="3"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Minimalist Apartment</h3>
+                        <p>Interior / 2023</p>
+                    </div>
+                </div>
+                <div class="project-card" data-project="4">
+                    <div class="project-image">
+                        <div class="project-canvas" data-canvas="4"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Cultural Center</h3>
+                        <p>Public / 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Design Philosophy</h2>
+                    <p>We believe in creating spaces that seamlessly blend functionality with aesthetic excellence. Our approach combines innovative 3D visualization with sustainable design principles.</p>
+                    <p>Every project is a unique journey from concept to reality, where we transform floor plans into living, breathing architectural experiences.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-number">150+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Years</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">25</span>
+                        <span class="stat-label">Awards</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Create Together</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:hello@kraftstudio.com">hello@kraftstudio.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Location</h3>
+                        <p>Yangon, Myanmar</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Kraft Studio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.7/build/spline-viewer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

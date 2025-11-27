@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Kraft Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">KRAFT STUDIO</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="project-hero-image">
+            <img id="heroImage" src="" alt="Project Hero">
+        </div>
+        <div class="project-hero-overlay">
+            <div class="container">
+                <a href="projects.html" class="back-link">← Back to Projects</a>
+                <h1 class="project-hero-title" id="projectTitle"></h1>
+                <div class="project-meta">
+                    <span class="meta-item" id="projectCategory"></span>
+                    <span class="meta-divider">|</span>
+                    <span class="meta-item" id="projectLocation"></span>
+                    <span class="meta-divider">|</span>
+                    <span class="meta-item" id="projectYear"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-content">
+                    <h2>Project Overview</h2>
+                    <p id="projectDescription"></p>
+                    <div class="project-specs">
+                        <div class="spec-item">
+                            <h4>Client</h4>
+                            <p id="projectClient"></p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Area</h4>
+                            <p id="projectArea"></p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Status</h4>
+                            <p id="projectStatus"></p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Services</h4>
+                            <p id="projectServices"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-image">
+                    <img id="overviewImage" src="" alt="Project Overview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details-section">
+        <div class="container">
+            <h2 class="section-heading">Design Concept</h2>
+            <p class="concept-text" id="conceptText"></p>
+        </div>
+    </section>
+
+    <!-- Full Width Image -->
+    <section class="full-width-image">
+        <img id="fullImage1" src="" alt="Project Detail">
+    </section>
+
+    <!-- Site Information -->
+    <section class="site-info">
+        <div class="container">
+            <div class="site-grid">
+                <div class="site-content">
+                    <h2>Site & Location</h2>
+                    <p id="siteDescription"></p>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <h4>Address</h4>
+                            <p id="siteAddress"></p>
+                        </div>
+                        <div class="location-item">
+                            <h4>Site Area</h4>
+                            <p id="siteArea"></p>
+                        </div>
+                        <div class="location-item">
+                            <h4>Orientation</h4>
+                            <p id="siteOrientation"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-map">
+                    <div id="mapPlaceholder" class="map-placeholder">
+                        <p>Map Location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Gallery -->
+    <section class="image-gallery">
+        <div class="container">
+            <h2 class="section-heading">Gallery</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Images will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials & Features -->
+    <section class="materials-section">
+        <div class="container">
+            <h2 class="section-heading">Materials & Features</h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <h3>Key Materials</h3>
+                    <ul id="materialsList"></ul>
+                </div>
+                <div class="material-card">
+                    <h3>Special Features</h3>
+                    <ul id="featuresList"></ul>
+                </div>
+                <div class="material-card">
+                    <h3>Sustainability</h3>
+                    <ul id="sustainabilityList"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Project -->
+    <section class="next-project">
+        <div class="container">
+            <h3>Next Project</h3>
+            <a href="#" id="nextProjectLink" class="next-project-link">
+                <div class="next-project-image">
+                    <img id="nextProjectImage" src="" alt="Next Project">
+                </div>
+                <div class="next-project-info">
+                    <span class="next-label">View Next →</span>
+                    <h2 id="nextProjectTitle"></h2>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Kraft Studio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Behance</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="project-detail.js"></script>
+</body>
+</html>
