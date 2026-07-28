@@ -1,45 +1,59 @@
-# Kraft Studio - Architecture Portfolio Website
+# Kraft Studio — Architecture Portfolio
 
-Modern, minimalistic architecture portfolio website featuring 3D visual transformations from floor plans to buildings.
+Modern architecture portfolio site for Kraft Studio (Yangon). React + Vite + Tailwind + Framer Motion.
 
 ## Features
 
-- **3D Floor Plan to Building Transformation**: Interactive Three.js animation that transforms 2D floor plans into 3D buildings as you scroll
-- **Clean Minimalistic Design**: Inspired by modern architecture portfolio aesthetics
-- **Responsive Layout**: Works seamlessly on desktop, tablet, and mobile devices
-- **Project Showcase**: Grid layout with individual 3D previews for each project
-- **Smooth Animations**: Scroll-triggered animations and transitions
-- **Contact Form**: Simple contact form for client inquiries
+- Responsive home, projects, and project detail pages
+- Category routes: Residential, Hotels & Schools, Commercial
+- Scroll animations and desktop parallax (disabled on touch)
+- Contact section and bilingual About (Burmese / English)
 
-## Technologies Used
+## Setup
 
-- HTML5
-- CSS3 (Grid, Flexbox, Custom Properties)
-- JavaScript (ES6+)
-- Three.js (3D Graphics)
+```bash
+npm install
+npm run dev
+```
 
-## Getting Started
+Open [http://localhost:3000](http://localhost:3000).
 
-1. Open `index.html` in a modern web browser
-2. Scroll to see the 3D transformation effect
-3. Explore the project gallery and other sections
+## Production build
 
-## Customization
+```bash
+npm run build
+npm run preview
+```
 
-- **Colors**: Edit CSS variables in `styles.css` (`:root` section)
-- **3D Models**: Modify the geometry in `script.js` (`createFloorPlan()` and `createBuilding()` functions)
-- **Content**: Update text and images in `index.html`
-- **Projects**: Add more project cards in the projects grid section
+Deploy the `dist/` folder to any static host (Netlify, Vercel, Cloudflare Pages, S3, etc.).
 
-## Browser Support
+For SPA hosting, redirect all routes to `index.html`.
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
+### Netlify
 
-Requires WebGL support for 3D features.
+Add `public/_redirects`:
 
-## License
+```
+/*    /index.html   200
+```
 
-Free to use and modify for your portfolio needs.
+### Vercel
+
+`vercel.json`:
+
+```json
+{ "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }] }
+```
+
+## Stack
+
+- React 18
+- Vite 5
+- TypeScript
+- Tailwind CSS 3
+- Framer Motion
+- React Router 6
+
+## Notes
+
+Legacy static HTML/CSS/JS files in the repo root are archived references only. The live app is under `src/` via `index.html`.

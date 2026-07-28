@@ -47,6 +47,9 @@ export default function Home() {
   }, [location])
 
   useEffect(() => {
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 768px)')
+    if (!mq.matches) return
+
     const handleMouseMove = (e: MouseEvent) => {
       const { innerWidth, innerHeight } = window
       const xPos = (e.clientX / innerWidth - 0.5) * 2
@@ -60,11 +63,11 @@ export default function Home() {
   }, [ctaMouseX, ctaMouseY])
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-dvh bg-black">
       <Hero />
 
       {/* About Us Scroll Section */}
-      <section id="about" className="relative py-32 px-6 snap-start min-h-screen flex items-center overflow-hidden">
+      <section id="about" className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 snap-start min-h-dvh flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -72,9 +75,7 @@ export default function Home() {
             alt="Kraft Studio Architecture"
             className="absolute inset-0 w-full h-full object-cover"
             loading="eager"
-            style={{ 
-              imageRendering: 'high-quality'
-            }}
+            decoding="async"
           />
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
@@ -87,7 +88,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16 -mt-8"
+            className="text-center mb-10 sm:mb-16"
           >
             <motion.span
               initial={{ opacity: 0, scale: 0.8 }}
@@ -98,17 +99,17 @@ export default function Home() {
             >
               Our Story
             </motion.span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white mb-6">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white mb-6">
               About Us
             </h2>
-            <div className="w-24 h-0.5 bg-[#C3FF1F] mx-auto mb-8"></div>
+            <div className="w-24 h-0.5 bg-[#C3FF1F] mx-auto mb-6 sm:mb-8"></div>
             
             {/* Language Toggle */}
-            <div className="flex justify-center gap-3 mt-8">
+            <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8">
               <button
                 type="button"
                 onClick={() => setShowEnglish(false)}
-                className={`px-8 py-3 text-sm tracking-[0.3em] uppercase rounded-full transition-all duration-300 font-medium ${
+                className={`px-5 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase rounded-full transition-all duration-300 font-medium ${
                   !showEnglish 
                     ? 'bg-[#C3FF1F] text-black shadow-lg shadow-[#C3FF1F]/30 scale-105' 
                     : 'bg-white/5 text-white/60 border border-white/20 hover:bg-white/10 hover:text-white hover:border-white/40'
@@ -119,7 +120,7 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => setShowEnglish(true)}
-                className={`px-8 py-3 text-sm tracking-[0.3em] uppercase rounded-full transition-all duration-300 font-medium ${
+                className={`px-5 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-[0.25em] sm:tracking-[0.3em] uppercase rounded-full transition-all duration-300 font-medium ${
                   showEnglish 
                     ? 'bg-[#C3FF1F] text-black shadow-lg shadow-[#C3FF1F]/30 scale-105' 
                     : 'bg-white/5 text-white/60 border border-white/20 hover:bg-white/10 hover:text-white hover:border-white/40'
@@ -139,13 +140,13 @@ export default function Home() {
             className="relative"
           >
             <motion.div 
-              className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl"
+              className="bg-white/5 border border-white/10 rounded-2xl sm:rounded-3xl p-5 sm:p-8 md:p-12 lg:p-16 shadow-2xl"
               initial={{ backdropFilter: 'blur(0px)' }}
               whileInView={{ backdropFilter: 'blur(24px)' }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <div className="relative min-h-[350px]">
+              <div className="relative min-h-[280px] sm:min-h-[350px]">
                 <AnimatePresence mode="wait">
                   {!showEnglish ? (
                     <motion.div
@@ -154,7 +155,7 @@ export default function Home() {
                       animate={{ opacity: 1, x: 0, scale: 1 }}
                       exit={{ opacity: 0, x: 30, scale: 0.95 }}
                       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="space-y-6 text-lg md:text-xl text-white/95 leading-relaxed"
+                      className="space-y-6 text-base sm:text-lg md:text-xl text-white/95 leading-relaxed"
                     >
                       <div className="space-y-6 text-center md:text-left">
                         <p>
@@ -177,7 +178,7 @@ export default function Home() {
                       animate={{ opacity: 1, x: 0, scale: 1 }}
                       exit={{ opacity: 0, x: -30, scale: 0.95 }}
                       transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="space-y-6 text-lg md:text-xl text-white/95 leading-relaxed"
+                      className="space-y-6 text-base sm:text-lg md:text-xl text-white/95 leading-relaxed"
                     >
                       <p className="text-2xl md:text-3xl font-light mb-8 text-center text-white">
                         Our <span className="text-[#C3FF1F] font-normal">Story</span>
@@ -209,10 +210,10 @@ export default function Home() {
       </section>
 
       {/* Our Services Section with immersive layout */}
-      <section className="relative py-32 px-6 overflow-hidden snap-start min-h-screen flex items-center">
+      <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 overflow-hidden snap-start min-h-dvh flex items-center">
         <div className="absolute inset-0 z-0">
           <div
-            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            className="absolute inset-0 bg-cover bg-center bg-parallax"
             style={{
               backgroundImage: 'url(/img/expertise-bg.jpg)'
             }}
@@ -226,7 +227,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-20"
           >
             <motion.span
               initial={{ opacity: 0, scale: 0.8 }}
@@ -237,15 +238,15 @@ export default function Home() {
             >
               services
             </motion.span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6 text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6 text-white">
               Our Expertise
             </h2>
-            <p className="text-white/80 tracking-wide text-lg max-w-2xl mx-auto">
+            <p className="text-white/80 tracking-wide text-base sm:text-lg max-w-2xl mx-auto px-2">
               Comprehensive design and consulting support that carries your project from initial idea to crafted reality.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-8">
             {[
               {
                 title: 'Architectural Design',
@@ -272,7 +273,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-white/5 border border-white/10 backdrop-blur-lg p-8 flex flex-col gap-6 hover:bg-white/10 transition-all duration-500"
+                className="bg-white/5 border border-white/10 backdrop-blur-lg p-5 sm:p-8 flex flex-col gap-5 sm:gap-6 hover:bg-white/10 transition-all duration-500"
               >
                 <div className="relative overflow-hidden aspect-[4/3] group/image">
                   <img 
@@ -376,10 +377,10 @@ export default function Home() {
 
       {/* Our Clients Section */}
       <section 
-        className="py-20 px-6 bg-white snap-start relative overflow-hidden"
+        className="py-14 sm:py-20 px-4 sm:px-6 bg-white snap-start relative overflow-hidden"
         style={{
           backgroundImage: `url('/img/kraft%20logo%20%5BConverted%5D.png')`,
-          backgroundSize: 'min(520px, 55vw)',
+          backgroundSize: 'min(420px, 70vw)',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
         }}
@@ -391,7 +392,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -403,11 +404,11 @@ export default function Home() {
               <img
                 src="/img/kraft%20logo%20%5BConverted%5D.png"
                 alt="Kraft Studio Logo"
-                className="h-12 w-auto object-contain"
+                className="h-10 sm:h-12 w-auto object-contain"
               />
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-4 text-gray-900">Our Clients</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-4 text-gray-900">Our Clients</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-base sm:text-lg mb-6 sm:mb-8 px-2">
               We are proud to collaborate with visionary brands and institutions who trust us to craft modern, human-centered spaces.
             </p>
           </motion.div>
@@ -417,25 +418,26 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-nowrap justify-center items-center gap-6 md:gap-8 lg:gap-10 xl:gap-12 px-4"
+            className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4 sm:gap-6 md:gap-8 place-items-center px-1"
           >
             {clientLogos.map((client, index) => (
               <motion.div
                 key={client.name}
-                initial={{ opacity: 0, x: 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ 
-                  duration: 0.6, 
-                  delay: 0.1 * index,
+                  duration: 0.5, 
+                  delay: 0.05 * index,
                   ease: [0.25, 0.46, 0.45, 0.94]
                 }}
-                className="flex items-center justify-center h-20 flex-shrink-0"
+                className="flex items-center justify-center h-14 sm:h-20 w-full"
               >
                 <img 
                   src={client.src} 
                   alt={client.name} 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain opacity-100 brightness-110 hover:grayscale transition-all duration-300" 
+                  className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto max-w-full object-contain opacity-100 brightness-110 hover:grayscale transition-all duration-300" 
+                  loading="lazy"
                 />
               </motion.div>
             ))}
@@ -444,33 +446,33 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="bg-black px-6 py-24 text-white snap-start min-h-screen flex items-center">
+      <section id="contact" className="bg-black px-4 sm:px-6 py-16 sm:py-24 text-white snap-start min-h-dvh flex items-center">
         <div className="mx-auto max-w-6xl w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="mb-16 text-center"
+            className="mb-10 sm:mb-16 text-center"
           >
             <span className="mb-4 inline-block rounded-full border border-[#C3FF1F]/40 bg-[#C3FF1F]/15 px-4 py-2 text-xs uppercase tracking-[0.35em] text-[#C3FF1F]">
               contact us
             </span>
-            <h2 className="text-4xl font-light leading-tight md:text-5xl">
+            <h2 className="text-3xl sm:text-4xl font-light leading-tight md:text-5xl text-balance">
               Let&apos;s choreograph your next space.
             </h2>
-            <p className="mt-4 text-white/70">
+            <p className="mt-4 text-white/70 text-sm sm:text-base px-2">
               Share your project vision and our team will schedule a workshop within 48 hours.
             </p>
           </motion.div>
 
-          <div className="grid gap-12 lg:grid-cols-[0.9fr,1.1fr]">
+          <div className="grid gap-8 sm:gap-12 lg:grid-cols-[0.9fr,1.1fr]">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="space-y-8 rounded-3xl border border-white/15 bg-white/5 p-10 backdrop-blur"
+              className="space-y-8 rounded-2xl sm:rounded-3xl border border-white/15 bg-white/5 p-6 sm:p-10 backdrop-blur"
             >
               <div>
                 <p className="text-xs uppercase tracking-[0.4em] text-white/60">Studio</p>
@@ -514,7 +516,7 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="rounded-3xl border border-white/15 bg-white/5 p-10 backdrop-blur"
+              className="rounded-2xl sm:rounded-3xl border border-white/15 bg-white/5 p-6 sm:p-10 backdrop-blur"
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="grid gap-6 md:grid-cols-2">
@@ -562,7 +564,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section with Background */}
-      <section className="relative py-32 px-6 overflow-hidden snap-start min-h-screen flex items-center">
+      <section className="relative py-16 sm:py-24 lg:py-32 px-4 sm:px-6 overflow-hidden snap-start min-h-dvh flex items-center">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.img
             src="/img/ef9022_c000642b4c1645a5b9c45ef0289a7057~mv2.jpeg"
@@ -598,24 +600,24 @@ export default function Home() {
               y: ctaContentY,
             }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-8 text-white leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight mb-6 sm:mb-8 text-white leading-tight text-balance">
               Ready to Transform
               <br />
               Your Vision?
             </h2>
-            <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-              Let's create something extraordinary together. Experience your designs in immersive 3D.
+            <p className="text-base sm:text-xl text-white/80 mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
+              Let's create something extraordinary together. Experience your designs in immersive spaces.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
                 to="/projects"
-                className="px-10 py-4 bg-white text-black text-sm tracking-widest hover:bg-gray-100 transition-all duration-300"
+                className="px-8 sm:px-10 py-3.5 sm:py-4 bg-white text-black text-xs sm:text-sm tracking-widest hover:bg-gray-100 transition-all duration-300 text-center"
               >
                 VIEW ALL PROJECTS
               </Link>
               <Link
                 to="/projects/residential"
-                className="px-10 py-4 border-2 border-[#c4df34] text-white text-sm tracking-widest hover:bg-white hover:text-black transition-all duration-300"
+                className="px-8 sm:px-10 py-3.5 sm:py-4 border-2 border-[#c4df34] text-white text-xs sm:text-sm tracking-widest hover:bg-white hover:text-black transition-all duration-300 text-center"
               >
                 RESIDENTIAL
               </Link>

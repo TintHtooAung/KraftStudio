@@ -5,6 +5,23 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true
-  }
+    open: true,
+  },
+  preview: {
+    port: 4173,
+  },
+  build: {
+    target: 'es2020',
+    cssCodeSplit: true,
+    sourcemap: false,
+    chunkSizeWarningLimit: 600,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          motion: ['framer-motion'],
+        },
+      },
+    },
+  },
 })

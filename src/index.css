@@ -1,16 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
-@font-face {
-  font-family: 'Andrea Bellarosa';
-  src: url('/fonts/Andrea Bellarosa.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 * {
   margin: 0;
@@ -18,20 +10,20 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(196, 223, 52, 0.3) transparent;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-  scroll-padding-top: 0;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(196, 223, 52, 0.3) transparent;
+  min-height: 100dvh;
 }
 
 html::-webkit-scrollbar {
@@ -52,20 +44,15 @@ html::-webkit-scrollbar-thumb:hover {
   background-color: rgba(196, 223, 52, 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* Scroll snap only on larger screens — mandatory snap hurts mobile UX */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
   html {
-    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
   }
-  
-  * {
-    scroll-snap-stop: normal;
-  }
-  
+
   section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 }
 
@@ -74,7 +61,7 @@ html::-webkit-scrollbar-thumb:hover {
     scroll-behavior: auto;
     scroll-snap-type: none;
   }
-  
+
   section {
     scroll-snap-align: none;
     scroll-snap-stop: normal;
@@ -85,37 +72,59 @@ html::-webkit-scrollbar-thumb:hover {
   .text-balance {
     text-wrap: balance;
   }
-  
+
+  /* Prefer dynamic viewport height for mobile browser chrome */
+  .min-h-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .h-dvh {
+    height: 100vh;
+    height: 100dvh;
+  }
+
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb {
     background: rgba(196, 223, 52, 0.4);
     border-radius: 10px;
     transition: background 0.3s ease;
   }
-  
+
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(196, 223, 52, 0.7);
   }
-  
+
   .custom-scrollbar {
     scrollbar-width: thin;
     scrollbar-color: rgba(196, 223, 52, 0.4) rgba(0, 0, 0, 0.2);
   }
-  
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* iOS-safe background attachment fallback */
+  .bg-parallax {
+    background-attachment: scroll;
+  }
+
+  @media (min-width: 1024px) {
+    .bg-parallax {
+      background-attachment: fixed;
+    }
   }
 }

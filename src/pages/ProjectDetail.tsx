@@ -23,7 +23,7 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen">
+      <section className="relative min-h-[70vh] md:min-h-dvh md:h-dvh">
         <div className="absolute inset-0">
           <img
             src={project.image}
@@ -33,11 +33,11 @@ export default function ProjectDetail() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
         </div>
 
-        <div className="relative z-10 h-full flex items-end">
-          <div className="max-w-7xl mx-auto px-6 pb-20 w-full">
+        <div className="relative z-10 min-h-[70vh] md:h-full flex items-end">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-12 sm:pb-20 w-full pt-24">
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm tracking-wider mb-8 transition-colors"
+              className="inline-flex items-center gap-2 text-white/80 hover:text-white text-sm tracking-wider mb-6 sm:mb-8 transition-colors"
             >
               <span>←</span> BACK TO PROJECTS
             </Link>
@@ -50,17 +50,17 @@ export default function ProjectDetail() {
               <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs tracking-[0.3em] uppercase mb-4">
                 {project.discipline}
               </span>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-4">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white mb-4 text-balance">
                 {project.title}
               </h1>
-              <div className="flex flex-wrap gap-6 text-white/80 text-sm tracking-wider">
+              <div className="flex flex-wrap gap-3 sm:gap-6 text-white/80 text-xs sm:text-sm tracking-wider">
                 <span>{project.location}</span>
                 <span>•</span>
                 <span>{project.year}</span>
                 {project.area && (
                   <>
-                    <span>•</span>
-                    <span>{project.area}</span>
+                    <span className="hidden xs:inline">•</span>
+                    <span className="hidden xs:inline">{project.area}</span>
                   </>
                 )}
               </div>
@@ -70,9 +70,9 @@ export default function ProjectDetail() {
       </section>
 
       {/* Project Overview */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -147,7 +147,7 @@ export default function ProjectDetail() {
 
       {/* Gallery */}
       {project.galleryImages && project.galleryImages.length > 0 && (
-        <section className="py-20 px-6 bg-gray-50">
+        <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -182,7 +182,7 @@ export default function ProjectDetail() {
 
       {/* Features */}
       {project.features && project.features.length > 0 && (
-        <section className="py-20 px-6">
+        <section className="py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -213,7 +213,7 @@ export default function ProjectDetail() {
       )}
 
       {/* Next Project CTA */}
-      <section className="py-20 px-6 bg-black text-white">
+      <section className="py-12 sm:py-20 px-4 sm:px-6 bg-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

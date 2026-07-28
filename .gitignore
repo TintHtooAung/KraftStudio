@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+
+# Build
+dist
+dist-ssr
+*.local
+
+# Editor / OS
+.DS_Store
+*.swp
+*.swo
+.idea
+.vscode/*
+!.vscode/extensions.json
+
+# Logs / env
+*.log
+npm-debug.log*
+.env
+.env.*
+!.env.example
+
+# Vite
+.vite
